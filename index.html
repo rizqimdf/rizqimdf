@@ -44,6 +44,23 @@
       const email = document.getElementById("email");
       const password = document.getElementById("password");
 
+      function changeLine(fromInput, toInput) {
+        fromInput.addEventListener("keypress", function onEvent(event) {
+          if (event.key == "Enter") {
+            event.preventDefault();
+            toInput.focus();
+          }
+        });
+      }
+
+      changeLine(nama, email);
+      changeLine(email, password);
+    </script>
+    <script>
+      const nama = document.getElementById("nama");
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+
       function cek() {
         var nama = document.getElementById("nama").value;
         var email = document.getElementById("email").value;
@@ -56,23 +73,6 @@
           alert("Silakan isi semua!");
         }
       }
-    </script>
-    <script>
-      const nama = document.getElementById("nama");
-      const email = document.getElementById("email");
-      const password = document.getElementById("password");
-
-      function changeLine(fromInput, toInput) {
-        fromInput.addEventListener("keypress", function onEvent(event) {
-          if (event.key == "Enter") {
-            event.preventDefault();
-            toInput.focus();
-          }
-        });
-      }
-
-      changeLine(nama, email);
-      changeLine(email, password);
     </script>
   </body>
 </html>
